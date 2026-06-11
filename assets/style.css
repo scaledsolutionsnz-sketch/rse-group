@@ -315,6 +315,75 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .feature-content p { margin-bottom: 18px; }
 @media(max-width:860px) { .feature-row, .feature-row.reverse { grid-template-columns: 1fr; direction: ltr; gap: 40px; } }
 
+/* ── BUILD SECTION ── */
+.build-image-container {
+  background: var(--mint);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.build-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.build-content h3 { color: var(--forest-green); }
+.build-content p { color: rgba(26,26,26,.75); }
+
+/* ── ELEVATIONS GALLERY ── */
+.elevation-thumbnail {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--mint);
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.elevation-thumbnail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(42, 102, 78, .15);
+}
+.elevation-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── PDF DOWNLOAD CARD ── */
+.pdf-download-card {
+  background: var(--mint);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1px solid rgba(42, 102, 78, .2);
+}
+.pdf-thumbnail {
+  flex-shrink: 0;
+  width: 120px;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+.pdf-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media(max-width:860px) {
+  .pdf-download-card {
+    flex-direction: column;
+  }
+  .pdf-thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+}
+
 /* ── SERVICE DETAIL PAGE ── */
 .service-hero {
   padding: 100px 0 64px;

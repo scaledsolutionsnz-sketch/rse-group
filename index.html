@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSE Group — Quality Living for Seasonal Workers, Blenheim</title>
   <meta name="description" content="RSE Group provides MBIE-certified managed accommodation for up to 280 RSE seasonal workers in Blenheim, Marlborough. A home away from home." />
+  <meta property="og:image" content="https://rse-group-demo.vercel.app/assets/images/RSE_Blenheim_render_front.png" />
+  <meta property="og:image:alt" content="RSE Blenheim accommodation, exterior render" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,7 +18,7 @@
     /* HOME-SPECIFIC */
     .hero {
       padding: 108px 0 64px;
-      background-image: linear-gradient(90deg, rgba(42,102,78,0.9) 0%, rgba(42,102,78,0.5) 40%, transparent 70%), url('assets/images/4kheroimage.png');
+      background-image: linear-gradient(90deg, rgba(42,102,78,0.9) 0%, rgba(42,102,78,0.5) 40%, transparent 70%), url('assets/images/RSE_Blenheim_render_front.png');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -226,6 +229,61 @@
       <div class="stat-cell">
         <div class="stat-num">100<span>%</span></div>
         <div class="stat-label">RSE audit compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE BUILD -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-24" style="margin-bottom:52px;">
+      <div class="eyebrow">The Accommodation</div>
+      <h2>Purpose-Built for Seasonal Workers</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px;">
+      <div class="build-image-container">
+        <img loading="lazy" src="assets/images/RSE_Blenheim_floor_plan.png" alt="RSE Blenheim floor plan showing 7 private sleeping suites and shared living spaces" />
+      </div>
+      <div class="build-content">
+        <h3 style="margin-bottom:16px;">Comfortable Living Suites</h3>
+        <p style="margin-bottom:24px;">Each unit sleeps up to 4 people across 2 private sleeping suites, with shared living, kitchen, and bathroom facilities. The layout maximizes comfort while maintaining efficient use of space.</p>
+        <a href="#" class="btn btn-orange" onclick="document.querySelector('.elevations-gallery')?.scrollIntoView({behavior:'smooth'}); return false;">View Architecture</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px;">
+      <div class="build-content" style="order:2;">
+        <h3 style="margin-bottom:16px;">Exterior Design</h3>
+        <p>The building features a modern design with natural materials and outdoor spaces for relaxation and community activities. The architecture reflects contemporary New Zealand design principles while remaining practical for managed accommodation.</p>
+      </div>
+      <div class="build-image-container" style="order:1;">
+        <img loading="lazy" src="assets/images/RSE_Blenheim_render_rear.png" alt="RSE Blenheim accommodation, rear exterior render" />
+      </div>
+    </div>
+    <!-- ELEVATIONS GALLERY -->
+    <div class="elevations-gallery" style="margin-bottom:64px;">
+      <div style="margin-bottom:28px;">
+        <h4 style="color:var(--forest-green);margin-bottom:16px;">Building Elevations</h4>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+        <a href="assets/images/RSE_Blenheim_elevations.png" target="_blank" rel="noopener noreferrer" class="elevation-thumbnail">
+          <img loading="lazy" src="assets/images/RSE_Blenheim_elevations.png" alt="RSE Blenheim building elevations — north, east, south, west views" />
+        </a>
+      </div>
+    </div>
+    <!-- PDF DOWNLOAD CARD -->
+    <div class="pdf-download-card">
+      <div style="display:flex;gap:28px;align-items:center;">
+        <div class="pdf-thumbnail">
+          <img src="assets/images/RSE_Blenheim_render_front.png" alt="Full floor plans document cover" />
+        </div>
+        <div style="flex:1;">
+          <h4 style="color:var(--forest-green);margin-bottom:8px;">Full Floor Plans & Architectural Set</h4>
+          <p style="font-size:.9rem;color:rgba(26,26,26,.6);margin-bottom:16px;">Complete technical documentation including floor plans, elevations, and construction details.</p>
+          <a href="assets/downloads/RSE%20Blenheim%20Floor%20Plans.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-orange" style="font-size:.9rem;">Download PDF (1.1 MB)</a>
+        </div>
       </div>
     </div>
   </div>
