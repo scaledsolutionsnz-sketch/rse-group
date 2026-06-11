@@ -248,12 +248,12 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   transform: scale(1.05);
 }
 .partner-link img {
-  height: 88px;
+  height: 140px;
   width: auto;
   object-fit: contain;
   background: var(--white);
   border-radius: 10px;
-  padding: 12px 22px;
+  padding: 16px 28px;
   border: 2px solid var(--forest-green-border);
   box-shadow: 0 1px 8px rgba(0,0,0,.04);
   transition: box-shadow .2s;
@@ -264,12 +264,12 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   box-shadow: 0 4px 16px rgba(42, 102, 78, .15);
 }
 .partners-marquee > img {
-  height: 88px;
+  height: 140px;
   width: auto;
   object-fit: contain;
   background: var(--white);
   border-radius: 10px;
-  padding: 12px 22px;
+  padding: 16px 28px;
   border: 2px solid var(--forest-green-border);
   box-shadow: 0 1px 8px rgba(0,0,0,.04);
   display: block;
