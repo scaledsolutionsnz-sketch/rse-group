@@ -15,19 +15,21 @@
     /* HOME-SPECIFIC */
     .hero {
       padding: 108px 0 64px;
-      background: var(--forest-green);
+      background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-green) 50%, rgba(42,102,78,0.85) 100%), url('assets/images/ACCOM-Side-on-web.jpg') right center / cover no-repeat;
+      position: relative;
+      min-height: 600px;
     }
     .hero-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 56px;
       align-items: center;
     }
     @media(max-width:900px) {
       .hero-split { grid-template-columns: 1fr; }
-      .hero-img { order: -1; }
+      .hero { background: var(--forest-green); }
     }
-    .hero-inner { }
+    .hero-inner { max-width: 540px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(228,240,234,.2); border: 1px solid rgba(228,240,234,.35);
@@ -38,6 +40,7 @@
     .hero .tagline { font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 500; color: rgba(228,240,234,.75); font-style: italic; margin-bottom: 20px; }
     .hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 540px; margin-bottom: 40px; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-img { display: none; }
 
     /* OFFER CARDS */
     .offer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
@@ -112,9 +115,6 @@
           <a href="mailto:managerdmtbm@gmail.com" class="btn btn-orange">Inquire Now</a>
           <a href="#offer" class="btn btn-outline-cream">What's on Offer</a>
         </div>
-      </div>
-      <div class="hero-img">
-        <img src="assets/images/ACCOM-Side-on-web.jpg" alt="RSE Group accommodation exterior — 36A Budge Street, Blenheim" style="width:100%;height:auto;" loading="eager" />
       </div>
     </div>
   </div>
