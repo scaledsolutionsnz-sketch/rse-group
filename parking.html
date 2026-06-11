@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe On-Site Parking — RSE Group, Blenheim</title>
+  <meta name="description" content="Security-controlled gate and full camera system. Safe, secure on-site parking at RSE Group, 36A Budge Street, Blenheim." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group logo" />
+        <span style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--cream);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;">RSE GROUP</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="units.html">Comfortable Units</a>
+        <a href="parking.html" class="active">Parking</a>
+        <a href="services.html">Services &amp; Linen</a>
+        <a href="induction.html">Site Induction</a>
+        <a href="contact.html">Inquire</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:+6427330897" class="header-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +64 27 330 8977
+        </a>
+        <a href="contact.html" class="btn btn-orange header-cta">Inquire Now</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="units.html">Comfortable Units</a>
+      <a href="parking.html">Safe On-Site Parking</a>
+      <a href="services.html">Services &amp; Linen</a>
+      <a href="induction.html">Site Induction</a>
+      <a href="contact.html" style="color:var(--orange);font-weight:600;">Inquire Now →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span style="color:var(--cream);">Safe On-Site Parking</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="service-hero" style="padding:0;">
+  <div class="parking-hero-img">
+    <img src="assets/images/Entrance-CCTV-web.png" alt="RSE Group gated car park entrance with CCTV — fleet vans on site" loading="eager" />
+  </div>
+  <div class="container">
+    <div class="parking-hero-text">
+      <div class="page-hero-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Budge Street, Blenheim
+      </div>
+      <div class="eyebrow">Security</div>
+      <h1>Safe On-Site Parking</h1>
+      <p class="lead" style="max-width:540px;margin-top:16px;font-size:1.05rem;color:rgba(245,245,240,.7);">Your vehicle is secure while you work. Our electronically controlled site keeps it that way around the clock.</p>
+      <div class="page-hero-actions" style="margin-top:32px;">
+        <a href="mailto:managerdmtbm@gmail.com" class="btn btn-orange">Inquire Now</a>
+        <a href="index.html" class="btn btn-outline-cream">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="service-body">
+  <div class="container">
+    <div class="service-body-grid">
+      <div class="service-description">
+        <!-- PHOTO BLOCK -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:36px;">
+          <div style="overflow:hidden;">
+            <img src="assets/images/ACCOM-CCTV-front-view-web.png" alt="ACCOM CCTV front view security camera" loading="lazy" style="width:100%;height:auto;object-fit:contain;transition:transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div style="overflow:hidden;">
+            <img src="assets/images/ACCOM-Side-on-web.png" alt="RSE Group accommodation exterior side view" loading="lazy" style="width:100%;height:auto;object-fit:contain;transition:transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+        </div>
+        <p>At RSE Group, your vehicle's security is taken seriously. Our security-controlled gate and camera system ensures that only authorised residents and visitors can access the site — giving you full peace of mind while you're out at work or resting between shifts.</p>
+        <p>The electronic gate controls who enters and exits the property, and our CCTV camera network covers the parking areas and key site access points around the clock.</p>
+
+        <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="card" style="padding:24px 20px;">
+            <div class="card-icon" style="width:40px;height:40px;border-radius:9px;margin-bottom:14px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 style="font-size:1rem;">Electronic Security Gate</h3>
+            <p style="font-size:.85rem;margin-top:4px;">Controlled entry — only authorised people access the site.</p>
+          </div>
+          <div class="card" style="padding:24px 20px;">
+            <div class="card-icon" style="width:40px;height:40px;border-radius:9px;margin-bottom:14px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3 style="font-size:1rem;">CCTV Camera System</h3>
+            <p style="font-size:.85rem;margin-top:4px;">Full coverage of the parking area and site access points.</p>
+          </div>
+          <div class="card" style="padding:24px 20px;">
+            <div class="card-icon" style="width:40px;height:40px;border-radius:9px;margin-bottom:14px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 style="font-size:1rem;">24-Hour Monitoring</h3>
+            <p style="font-size:.85rem;margin-top:4px;">Security systems active day and night, every day of the season.</p>
+          </div>
+          <div class="card" style="padding:24px 20px;">
+            <div class="card-icon" style="width:40px;height:40px;border-radius:9px;margin-bottom:14px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 style="font-size:1rem;">Ample On-Site Space</h3>
+            <p style="font-size:.85rem;margin-top:4px;">Space for personal vehicles, vans, and fleet transport.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="service-sidebar">
+        <div class="sidebar-card">
+          <h4>Security Features</h4>
+          <div class="sidebar-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Electronic gate access control
+          </div>
+          <div class="sidebar-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Full CCTV camera coverage
+          </div>
+          <div class="sidebar-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            24/7 active monitoring
+          </div>
+          <div class="sidebar-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            36A Budge Street, Blenheim
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h4>Make an Enquiry</h4>
+          <p style="font-size:.88rem;margin-bottom:16px;">Find out about availability and arrangements.</p>
+          <a href="mailto:managerdmtbm@gmail.com" class="btn btn-orange" style="width:100%;justify-content:center;">Inquire Now</a>
+          <a href="tel:+6427330897" class="btn btn-outline-cream" style="width:100%;justify-content:center;margin-top:10px;">Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="container">
+    <p class="partners-label">Supporting Business Partners</p>
+  </div>
+  <div class="partners-marquee-wrap">
+    <div class="partners-marquee">
+      <img src="assets/images/SSCO.Logo.png" alt="SSCO" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="Talley's" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="Spring Creek Vintners" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="iNEME" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="AVS" loading="lazy" />
+      <img src="assets/images/SSCO.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="" aria-hidden="true" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FOOTER -->
+<footer class="contact-footer">
+  <div class="container">
+    <div class="contact-footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group" />
+        <p>Purpose-built, MBIE-certified managed accommodation for RSE scheme seasonal workers in Blenheim, Marlborough.</p>
+        <span class="footer-tagline">"A home away from home."</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Home</a></li>
+          <li><a href="units.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Comfortable Units</a></li>
+          <li><a href="parking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Safe On-Site Parking</a></li>
+          <li><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Services &amp; Linen</a></li>
+          <li><a href="induction.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Site Induction</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+6427330897"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+64 27 330 8977</a></li>
+          <li><a href="mailto:managerdmtbm@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>managerdmtbm@gmail.com</a></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>36A Budge Street, Riversdale, Blenheim</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RSE Group. All rights reserved.</p>
+      <a href="https://scaledsolutions.nz" target="_blank" rel="noopener">Website by Scaled Solutions</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header').style.boxShadow = window.scrollY > 40 ? '0 2px 32px rgba(0,0,0,.35)' : 'none';
+});
+</script>
+</body>
+</html>

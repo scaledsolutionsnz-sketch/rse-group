@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inquire &amp; Check Availability — RSE Group, Blenheim</title>
+  <meta name="description" content="Inquire about availability at RSE Group. Select your preferred dates and send us your details — we'll be in touch within one business day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* ── CONTACT PAGE ── */
+    .contact-hero { padding: 100px 0 56px; border-bottom: 1px solid rgba(237,234,184,.08); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: 72px 0 96px;
+    }
+    @media(max-width:900px) { .contact-layout { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ── FORM ── */
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group label {
+      font-size: .82rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: rgba(237,234,184,.6);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(237,234,184,.15);
+      border-radius: 9px;
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: .93rem;
+      color: var(--off-white);
+      transition: border-color .2s, background .2s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(245,245,240,.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(237,234,184,.4);
+      background: rgba(255,255,255,.08);
+    }
+    .form-group select option { background: #43442F; color: var(--off-white); }
+    .form-group textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .date-display {
+      background: rgba(232,133,46,.1);
+      border: 1px solid rgba(232,133,46,.25);
+      border-radius: 9px;
+      padding: 12px 16px;
+      font-size: .88rem;
+      color: rgba(237,234,184,.85);
+      min-height: 44px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .date-display svg { color: var(--orange); flex-shrink: 0; }
+    .date-display span { font-style: italic; color: rgba(245,245,240,.35); }
+
+    .form-submit { margin-top: 8px; }
+    .form-submit .btn { width: 100%; justify-content: center; padding: 16px; font-size: 1rem; }
+
+    .form-note {
+      font-size: .78rem; color: rgba(245,245,240,.35);
+      text-align: center; margin-top: 4px; line-height: 1.6;
+    }
+
+    /* ── CALENDAR ── */
+    .cal-wrap {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(237,234,184,.12);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .cal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px;
+      background: rgba(255,255,255,.03);
+      border-bottom: 1px solid rgba(237,234,184,.08);
+    }
+    .cal-header h3 {
+      font-family: var(--font-head); font-size: 1.05rem;
+      font-weight: 700; color: var(--cream); letter-spacing: .5px;
+    }
+    .cal-nav {
+      background: none; border: 1px solid rgba(237,234,184,.15);
+      border-radius: 7px; padding: 6px 10px;
+      color: var(--cream); cursor: pointer;
+      font-size: .85rem; transition: background .2s, border-color .2s;
+    }
+    .cal-nav:hover { background: rgba(237,234,184,.08); border-color: rgba(237,234,184,.3); }
+
+    .cal-grid { padding: 16px; }
+    .cal-days-header {
+      display: grid; grid-template-columns: repeat(7,1fr);
+      margin-bottom: 8px;
+    }
+    .cal-days-header span {
+      text-align: center; font-size: .72rem; font-weight: 700;
+      letter-spacing: 1px; color: rgba(237,234,184,.4);
+      text-transform: uppercase; padding: 6px 0;
+    }
+    .cal-cells { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; }
+    .cal-cell {
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; font-size: .88rem; font-weight: 500;
+      color: rgba(245,245,240,.75);
+      cursor: pointer; transition: background .15s, color .15s;
+      position: relative;
+    }
+    .cal-cell:hover:not(.past):not(.empty) {
+      background: rgba(237,234,184,.1); color: var(--cream);
+    }
+    .cal-cell.empty { cursor: default; }
+    .cal-cell.past { color: rgba(245,245,240,.2); cursor: not-allowed; }
+    .cal-cell.today {
+      color: var(--orange); font-weight: 700;
+    }
+    .cal-cell.today::after {
+      content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+      width: 4px; height: 4px; border-radius: 50%; background: var(--orange);
+    }
+    .cal-cell.start-date, .cal-cell.end-date {
+      background: var(--orange); color: #fff; font-weight: 700;
+    }
+    .cal-cell.in-range {
+      background: rgba(232,133,46,.18); color: var(--cream);
+      border-radius: 0;
+    }
+    .cal-cell.start-date { border-radius: 8px 0 0 8px; }
+    .cal-cell.end-date   { border-radius: 0 8px 8px 0; }
+    .cal-cell.start-date.end-date { border-radius: 8px; }
+
+    .cal-legend {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(237,234,184,.08);
+      font-size: .8rem; color: rgba(245,245,240,.45);
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .cal-legend-item { display: flex; align-items: center; gap: 6px; }
+    .cal-legend-dot {
+      width: 10px; height: 10px; border-radius: 3px;
+    }
+
+    /* ── INFO CARDS ── */
+    .contact-info { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
+    .info-card {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(237,234,184,.1);
+      border-radius: var(--radius); padding: 18px 20px;
+    }
+    .info-card svg { color: var(--orange); flex-shrink: 0; margin-top: 2px; width: 18px; height: 18px; }
+    .info-card strong { display: block; font-size: .88rem; color: var(--cream); margin-bottom: 3px; }
+    .info-card p { font-size: .83rem; margin: 0; }
+    .info-card a { color: rgba(245,245,240,.65); }
+    .info-card a:hover { color: var(--cream); }
+
+    /* ── SUCCESS STATE ── */
+    .success-msg {
+      display: none;
+      background: rgba(60,170,90,.12); border: 1px solid rgba(60,170,90,.3);
+      border-radius: var(--radius); padding: 20px 24px;
+      color: rgba(237,234,184,.9); font-size: .95rem; line-height: 1.7;
+      margin-top: 16px;
+    }
+    .success-msg.visible { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group logo" />
+        <span style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--cream);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;">RSE GROUP</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="units.html">Comfortable Units</a>
+        <a href="parking.html">Parking</a>
+        <a href="services.html">Services &amp; Linen</a>
+        <a href="induction.html">Site Induction</a>
+        <a href="contact.html" class="active">Inquire</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:+6427330897" class="header-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +64 27 330 8977
+        </a>
+        <a href="contact.html" class="btn btn-orange header-cta">Inquire Now</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="units.html">Comfortable Units</a>
+      <a href="parking.html">Safe On-Site Parking</a>
+      <a href="services.html">Services &amp; Linen</a>
+      <a href="induction.html">Site Induction</a>
+      <a href="contact.html" style="color:var(--orange);font-weight:600;">Inquire Now →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span style="color:var(--cream);">Inquire &amp; Availability</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Check Availability &amp; Inquire</h1>
+    <p class="lead" style="max-width:560px;margin-top:16px;font-size:1.05rem;color:rgba(245,245,240,.7);">Select your preferred dates on the calendar, fill in your details, and we'll get back to you within one business day.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="contact-layout">
+
+    <!-- LEFT: FORM -->
+    <div>
+      <h2 style="font-size:1.4rem;margin-bottom:28px;">Your Details</h2>
+      <form class="contact-form" id="inquiryForm" onsubmit="submitForm(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="f-name" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="f-email" placeholder="you@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="+64 ..." />
+          </div>
+          <div class="form-group">
+            <label>Company / Employer</label>
+            <input type="text" id="f-company" placeholder="e.g. Spring Creek Vintners" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Number of Workers</label>
+          <select id="f-workers">
+            <option value="">Select...</option>
+            <option>1–5</option>
+            <option>6–15</option>
+            <option>16–30</option>
+            <option>31–60</option>
+            <option>61–100</option>
+            <option>100+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Dates (selected below)</label>
+          <div class="date-display" id="dateDisplay">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>No dates selected — use the calendar →</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Message / Questions</label>
+          <textarea id="f-message" placeholder="Any specific requirements, questions about the facilities, or anything else you'd like us to know…"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-orange">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Enquiry
+          </button>
+        </div>
+        <p class="form-note">This opens your email client with your enquiry pre-filled. We respond within one business day.</p>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        ✓ Your email client has opened with your enquiry pre-filled. Just hit send — we'll be in touch within one business day.
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <div class="info-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+6427330897">+64 27 330 8977</a></p>
+          </div>
+        </div>
+        <div class="info-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:managerdmtbm@gmail.com">managerdmtbm@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Address</strong>
+            <p>36A Budge Street, Riversdale, Blenheim</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CALENDAR -->
+    <div>
+      <h2 style="font-size:1.4rem;margin-bottom:8px;">Select Dates</h2>
+      <p style="font-size:.88rem;color:rgba(245,245,240,.5);margin-bottom:20px;">Click a start date, then click an end date to indicate your preferred period.</p>
+
+      <div class="cal-wrap">
+        <div class="cal-header">
+          <button class="cal-nav" id="prevBtn" onclick="changeMonth(-1)">&#8592;</button>
+          <h3 id="calTitle"></h3>
+          <button class="cal-nav" id="nextBtn" onclick="changeMonth(1)">&#8594;</button>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-days-header">
+            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span>
+            <span>Th</span><span>Fr</span><span>Sa</span>
+          </div>
+          <div class="cal-cells" id="calCells"></div>
+        </div>
+        <div class="cal-legend">
+          <div class="cal-legend-item">
+            <div class="cal-legend-dot" style="background:var(--orange);"></div>
+            Start / End
+          </div>
+          <div class="cal-legend-item">
+            <div class="cal-legend-dot" style="background:rgba(232,133,46,.25);"></div>
+            Date range
+          </div>
+          <div class="cal-legend-item">
+            <div class="cal-legend-dot" style="background:rgba(245,245,240,.15);border:1px solid rgba(232,133,46,.5);"></div>
+            Today
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:.78rem;color:rgba(245,245,240,.3);margin-top:14px;line-height:1.6;">
+        This is not a live booking system. Selecting dates simply helps us understand your preferred period — our team will confirm actual availability when we respond.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="container">
+    <p class="partners-label">Supporting Business Partners</p>
+  </div>
+  <div class="partners-marquee-wrap">
+    <div class="partners-marquee">
+      <img src="assets/images/SSCO.Logo.png" alt="SSCO" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="Talley's" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="Spring Creek Vintners" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="iNEME" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="AVS" loading="lazy" />
+      <img src="assets/images/SSCO.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="" aria-hidden="true" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="contact-footer">
+  <div class="container">
+    <div class="contact-footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group" />
+        <p>Purpose-built, MBIE-certified managed accommodation for RSE scheme seasonal workers in Blenheim, Marlborough.</p>
+        <span class="footer-tagline">"A home away from home."</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Home</a></li>
+          <li><a href="units.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Comfortable Units</a></li>
+          <li><a href="parking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Safe On-Site Parking</a></li>
+          <li><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Services &amp; Linen</a></li>
+          <li><a href="induction.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Site Induction</a></li>
+          <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Inquire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+6427330897"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+64 27 330 8977</a></li>
+          <li><a href="mailto:managerdmtbm@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>managerdmtbm@gmail.com</a></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>36A Budge Street, Riversdale, Blenheim</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RSE Group. All rights reserved.</p>
+      <a href="https://scaledsolutions.nz" target="_blank" rel="noopener">Website by Scaled Solutions</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── HEADER SCROLL ────────────────────────────────────────────────────────────
+function toggleNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header').style.boxShadow = window.scrollY > 40 ? '0 2px 32px rgba(0,0,0,.35)' : 'none';
+});
+
+// ── CALENDAR ─────────────────────────────────────────────────────────────────
+const MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+
+const today = new Date();
+today.setHours(0,0,0,0);
+
+let viewYear  = today.getFullYear();
+let viewMonth = today.getMonth();
+let startDate = null;
+let endDate   = null;
+
+function fmt(d) {
+  return d ? `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}` : '';
+}
+
+function renderCal() {
+  document.getElementById('calTitle').textContent = `${MONTHS[viewMonth]} ${viewYear}`;
+  document.getElementById('prevBtn').disabled = (viewYear === today.getFullYear() && viewMonth <= today.getMonth());
+
+  const cells = document.getElementById('calCells');
+  cells.innerHTML = '';
+
+  const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+  // Empty leading cells
+  for (let i = 0; i < firstDay; i++) {
+    const el = document.createElement('div');
+    el.className = 'cal-cell empty';
+    cells.appendChild(el);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(viewYear, viewMonth, d);
+    const el = document.createElement('div');
+    el.className = 'cal-cell';
+    el.textContent = d;
+
+    if (date < today) {
+      el.classList.add('past');
+    } else {
+      if (date.getTime() === today.getTime()) el.classList.add('today');
+      if (startDate && date.getTime() === startDate.getTime()) el.classList.add('start-date');
+      if (endDate   && date.getTime() === endDate.getTime())   el.classList.add('end-date');
+      if (startDate && endDate && date > startDate && date < endDate) el.classList.add('in-range');
+      el.addEventListener('click', () => pickDate(date));
+    }
+
+    cells.appendChild(el);
+  }
+}
+
+function pickDate(date) {
+  if (!startDate || (startDate && endDate)) {
+    // Fresh pick
+    startDate = date;
+    endDate = null;
+  } else if (date < startDate) {
+    // Picked before start — swap
+    startDate = date;
+    endDate = null;
+  } else {
+    endDate = date;
+  }
+  renderCal();
+  updateDateDisplay();
+}
+
+function updateDateDisplay() {
+  const el = document.getElementById('dateDisplay');
+  if (!startDate) {
+    el.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>No dates selected — use the calendar →</span>';
+  } else if (!endDate) {
+    el.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Arrival: <strong style="color:var(--cream)">${fmt(startDate)}</strong> — click an end date`;
+  } else {
+    el.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong style="color:var(--cream)">${fmt(startDate)}</strong> → <strong style="color:var(--cream)">${fmt(endDate)}</strong>`;
+  }
+}
+
+function changeMonth(dir) {
+  viewMonth += dir;
+  if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+  if (viewMonth < 0)  { viewMonth = 11; viewYear--; }
+  renderCal();
+}
+
+// ── FORM SUBMIT → mailto ─────────────────────────────────────────────────────
+function submitForm(e) {
+  e.preventDefault();
+
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  const workers = document.getElementById('f-workers').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  let dateStr = 'Not specified';
+  if (startDate && endDate)   dateStr = `${fmt(startDate)} to ${fmt(endDate)}`;
+  else if (startDate)         dateStr = `From ${fmt(startDate)} (end date not specified)`;
+
+  const body = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    phone   ? `Phone: ${phone}`     : null,
+    company ? `Company: ${company}` : null,
+    workers ? `Workers: ${workers}` : null,
+    `Preferred dates: ${dateStr}`,
+    message ? `\nMessage:\n${message}` : null,
+  ].filter(Boolean).join('\n');
+
+  const subject = encodeURIComponent(`Accommodation Enquiry — ${name}${company ? ', ' + company : ''}`);
+  const bodyEnc = encodeURIComponent(body);
+  window.location.href = `mailto:managerdmtbm@gmail.com?subject=${subject}&body=${bodyEnc}`;
+
+  document.getElementById('successMsg').classList.add('visible');
+}
+
+// Init
+renderCal();
+</script>
+</body>
+</html>

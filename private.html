@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Feedback — RSE Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0f2040;
+      --gold: #C9A84C;
+      --gold-light: #dfc070;
+      --white: #ffffff;
+      --off-white: #f4f2ee;
+      --grey-text: #4a4640;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      padding: 1.4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .form-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      max-width: 580px;
+      width: 100%;
+      padding: 3.5rem;
+    }
+
+    .card-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      line-height: 1.22;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-title em { font-style: italic; color: var(--gold-light); }
+
+    .card-sub {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+
+    .rating-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 0.45rem 1rem;
+      border-radius: 3px;
+      margin-bottom: 2.4rem;
+    }
+
+    .rating-stars { color: #F9AB00; font-size: 1rem; letter-spacing: 1px; }
+
+    .rating-text {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2.4rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 0.9rem 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+      border-radius: 3px;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    select option { background: var(--navy); }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+
+    textarea { min-height: 160px; resize: vertical; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.95rem 2rem;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.84rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 0.6rem;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,76,0.28);
+    }
+
+    .privacy-note {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.28);
+      margin-top: 1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* SUCCESS STATE */
+    #success-state {
+      display: none;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(201,168,76,0.12);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.8rem;
+      font-size: 1.8rem;
+    }
+
+    .success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .success-body {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2rem;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.8rem 2rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-home:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    footer a { color: rgba(201,168,76,0.6); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .form-card { padding: 2.2rem 1.6rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">RSE<span>.</span></a>
+    <a href="review.html" class="nav-back">← Change Rating</a>
+  </nav>
+
+  <main>
+    <div class="form-card">
+
+      <!-- FORM STATE -->
+      <div id="form-state">
+        <p class="card-eyebrow">Private Feedback</p>
+        <h1 class="card-title">Help us do<br /><em>better for you.</em></h1>
+        <p class="card-sub">Your feedback goes directly and privately to our team — it won't be published anywhere.</p>
+
+        <div class="rating-display" id="rating-display">
+          <span class="rating-stars" id="rating-stars">★☆☆☆☆</span>
+          <span class="rating-text" id="rating-text">1 out of 5</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <form id="feedback-form" action="https://api.staticforms.xyz/submit" method="post">
+          <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6" />
+          <input type="hidden" name="subject" value="Private Feedback — RSE Group" />
+          <input type="hidden" name="replyTo" value="@" />
+          <input type="hidden" name="rating" id="rating-input" value="" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="feedback">Your Feedback</label>
+            <textarea id="feedback" name="message" placeholder="Please tell us what we could have done better, or anything you'd like us to know..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Private Feedback</button>
+          <p class="privacy-note">This feedback is strictly confidential and shared only with the RSE Group leadership team.</p>
+        </form>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="success-state">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">Thank you for your feedback.</h2>
+        <p class="success-body">Your message has been received privately by our team. We take all feedback seriously and will use it to improve our service. A member of our team may reach out to follow up.</p>
+        <a href="index.html" class="btn-home">Return to RSE Group</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 RSE Group &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </footer>
+
+  <script>
+    // Pre-fill rating from URL param
+    const params = new URLSearchParams(window.location.search);
+    const rating = parseInt(params.get('rating')) || 1;
+    const clampedRating = Math.min(Math.max(rating, 1), 3);
+
+    document.getElementById('rating-input').value = clampedRating;
+    const starsText = '★'.repeat(clampedRating) + '☆'.repeat(5 - clampedRating);
+    document.getElementById('rating-stars').textContent = starsText;
+    document.getElementById('rating-text').textContent = `${clampedRating} out of 5`;
+
+    // Handle form submit + show success
+    const form = document.getElementById('feedback-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        await fetch(form.action, { method: 'POST', body: data });
+      } catch(_) {}
+      document.getElementById('form-state').style.display = 'none';
+      document.getElementById('success-state').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

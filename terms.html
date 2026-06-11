@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Conditions — RSE Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0f2040;
+      --gold: #C9A84C;
+      --gold-light: #dfc070;
+      --white: #ffffff;
+      --off-white: #f4f2ee;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    nav {
+      padding: 1.4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      position: sticky;
+      top: 0;
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--navy-mid);
+      padding: 5rem 3rem 4rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .page-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .page-title em { font-style: italic; color: var(--gold-light); }
+
+    .page-meta {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .legal-section:last-child {
+      border-bottom: none;
+    }
+
+    .legal-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .legal-section h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 1.5rem 0 0.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .legal-section p {
+      font-size: 0.9rem;
+      line-height: 1.82;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+      margin: 0.6rem 0 1rem 1.4rem;
+    }
+
+    .legal-section ul li {
+      font-size: 0.9rem;
+      line-height: 1.78;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-box {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2rem 2.4rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.7) !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .contact-box a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      color: var(--gold-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.25);
+      background: #060e1a;
+    }
+
+    footer a { color: rgba(201,168,76,0.6); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .page-header { padding: 3rem 1.5rem 2.5rem; }
+      .content-wrap { padding: 2.5rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">RSE<span>.</span></a>
+    <a href="index.html" class="nav-back">← Home</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="page-eyebrow">Legal</p>
+      <h1 class="page-title">Terms &amp; <em>Conditions</em></h1>
+      <p class="page-meta">RSE Group &nbsp;·&nbsp; Rotorua, New Zealand &nbsp;·&nbsp; Last updated: June 2025</p>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="legal-section">
+      <h2>1. Introduction</h2>
+      <p>These Terms and Conditions ("Terms") govern your use of the RSE Group website located at this domain ("Site") and any services, information, or materials provided by RSE Group ("we", "us", "our") through this Site.</p>
+      <p>By accessing or using this Site, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not access or use this Site.</p>
+      <p>RSE Group is a business group based in Rotorua, New Zealand, providing strategic consulting, operations management, group management, and investment and venture services.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Use of This Website</h2>
+      <h3>Permitted Use</h3>
+      <p>You may access and use this Site for lawful purposes and in accordance with these Terms. You agree not to use this Site:</p>
+      <ul>
+        <li>In any way that violates applicable New Zealand or international laws or regulations</li>
+        <li>To transmit or send unsolicited communications</li>
+        <li>To impersonate RSE Group or any person connected with RSE Group</li>
+        <li>To engage in any conduct that restricts or inhibits any other person's use of the Site</li>
+        <li>To collect or harvest any data from the Site without our express written consent</li>
+      </ul>
+      <h3>Accuracy of Information</h3>
+      <p>While we take reasonable steps to ensure the information on this Site is accurate and current, RSE Group makes no warranties or representations as to the accuracy, completeness, or reliability of any information on this Site. We reserve the right to modify or remove content at any time without notice.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Intellectual Property</h2>
+      <p>All content on this Site — including but not limited to text, graphics, logos, images, and design — is the property of RSE Group and is protected by applicable New Zealand and international intellectual property laws.</p>
+      <p>You may not reproduce, distribute, modify, create derivative works from, publicly display, or otherwise exploit any content from this Site without our prior written consent.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Enquiries and Communications</h2>
+      <p>When you submit an enquiry through our contact form, you consent to RSE Group contacting you regarding your enquiry by the contact details you provide. We will handle your information in accordance with our Privacy Policy.</p>
+      <p>Submitting an enquiry does not create any contractual or professional relationship between you and RSE Group unless a separate written agreement is executed.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Disclaimer of Warranties</h2>
+      <p>This Site and its content are provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+      <p>RSE Group does not warrant that the Site will be available uninterrupted, error-free, or free of viruses or other harmful components.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by New Zealand law, RSE Group shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising from your use of, or inability to use, this Site or any content on it.</p>
+      <p>Nothing in these Terms limits or excludes any rights that cannot be excluded or limited under the Consumer Guarantees Act 1993 or the Fair Trading Act 1986.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Third-Party Links</h2>
+      <p>This Site may contain links to third-party websites. These links are provided for convenience only. RSE Group does not endorse, control, or take responsibility for the content, privacy practices, or availability of those external sites.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Privacy</h2>
+      <p>Your use of this Site is also subject to our Privacy Policy, which is incorporated into these Terms by reference. Please read our <a href="privacy.html" style="color: var(--gold); text-decoration:none;">Privacy Policy</a> to understand our practices.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Governing Law</h2>
+      <p>These Terms are governed by and construed in accordance with the laws of New Zealand. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of New Zealand.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Changes to These Terms</h2>
+      <p>RSE Group reserves the right to modify these Terms at any time. Changes will be effective immediately upon posting to this Site. Your continued use of the Site after any changes constitutes your acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Contact Us</h2>
+      <p>If you have any questions about these Terms and Conditions, please contact us:</p>
+      <div class="contact-box">
+        <p><strong style="color:rgba(255,255,255,0.85);">RSE Group</strong></p>
+        <p>Rotorua, Bay of Plenty, New Zealand</p>
+        <p>Email: <a href="mailto:nick@mdgbeverages.com">nick@mdgbeverages.com</a></p>
+        <p>Phone: <a href="tel:021359169">021 359 169</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 RSE Group &nbsp;·&nbsp; Rotorua, New Zealand &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="index.html">Home</a>
+  </footer>
+
+</body>
+</html>

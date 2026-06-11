@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — RSE Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0f2040;
+      --gold: #C9A84C;
+      --gold-light: #dfc070;
+      --white: #ffffff;
+      --off-white: #f4f2ee;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    nav {
+      padding: 1.4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      position: sticky;
+      top: 0;
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    .page-header {
+      background: var(--navy-mid);
+      padding: 5rem 3rem 4rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .page-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .page-title em { font-style: italic; color: var(--gold-light); }
+
+    .page-meta {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .legal-section:last-child { border-bottom: none; }
+
+    .legal-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .legal-section h3 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 1.5rem 0 0.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .legal-section p {
+      font-size: 0.9rem;
+      line-height: 1.82;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+      margin: 0.6rem 0 1rem 1.4rem;
+    }
+
+    .legal-section ul li {
+      font-size: 0.9rem;
+      line-height: 1.78;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box {
+      background: rgba(201,168,76,0.07);
+      border-left: 3px solid var(--gold);
+      padding: 1.4rem 1.8rem;
+      margin: 1.4rem 0;
+    }
+
+    .highlight-box p {
+      color: rgba(255,255,255,0.72) !important;
+      margin: 0 !important;
+    }
+
+    .contact-box {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2rem 2.4rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.7) !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .contact-box a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { color: var(--gold-light); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.25);
+      background: #060e1a;
+    }
+
+    footer a { color: rgba(201,168,76,0.6); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .page-header { padding: 3rem 1.5rem 2.5rem; }
+      .content-wrap { padding: 2.5rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">RSE<span>.</span></a>
+    <a href="index.html" class="nav-back">← Home</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="page-eyebrow">Legal</p>
+      <h1 class="page-title">Privacy <em>Policy</em></h1>
+      <p class="page-meta">RSE Group &nbsp;·&nbsp; Rotorua, New Zealand &nbsp;·&nbsp; Last updated: June 2025</p>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="legal-section">
+      <h2>1. Overview</h2>
+      <p>RSE Group ("we", "us", "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you visit our website or interact with our services.</p>
+      <div class="highlight-box">
+        <p>This policy is written in accordance with the New Zealand Privacy Act 2020 and the 13 Information Privacy Principles (IPPs) outlined therein.</p>
+      </div>
+      <p>If you have any questions about this policy or our privacy practices, please contact us using the details at the end of this document.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Information We Collect</h2>
+      <h3>Information You Provide Directly</h3>
+      <p>When you submit an enquiry, contact form, or feedback through our website, we may collect:</p>
+      <ul>
+        <li>Your name and contact details (email address, phone number)</li>
+        <li>Your business name and relevant business information</li>
+        <li>The nature of your enquiry or feedback message</li>
+        <li>Any other information you choose to include in your communications with us</li>
+      </ul>
+      <h3>Information Collected Automatically</h3>
+      <p>When you visit our website, we may automatically collect certain technical information, including:</p>
+      <ul>
+        <li>Your IP address and browser type</li>
+        <li>Pages visited and time spent on the site</li>
+        <li>Referring website addresses</li>
+        <li>Device type and operating system</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li>To respond to enquiries and communicate with you about our services</li>
+        <li>To provide the services you have requested or enquired about</li>
+        <li>To improve and develop our website and service offerings</li>
+        <li>To send relevant communications about RSE Group, where you have consented to receive them</li>
+        <li>To comply with our legal obligations</li>
+        <li>To protect our legitimate business interests</li>
+      </ul>
+      <p>We will only use your information for the purposes for which it was collected, or for purposes directly related to those purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Sharing Your Information</h2>
+      <p>RSE Group does not sell, trade, or rent your personal information to third parties. We may share your information in limited circumstances:</p>
+      <ul>
+        <li><strong style="color:rgba(255,255,255,0.8);">Service Providers:</strong> We may share information with trusted third-party service providers who assist us in operating our website and delivering services (such as form processing services). These providers are bound by confidentiality obligations.</li>
+        <li><strong style="color:rgba(255,255,255,0.8);">Legal Requirements:</strong> We may disclose your information where required to do so by law, court order, or regulatory authority.</li>
+        <li><strong style="color:rgba(255,255,255,0.8);">Business Transfers:</strong> In the event of a merger, acquisition, or sale of business assets, personal information may be transferred as part of that transaction.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Data Storage and Security</h2>
+      <p>We take the security of your personal information seriously. We implement appropriate technical and organisational measures to protect your information against unauthorised access, loss, alteration, or disclosure.</p>
+      <p>Your information may be stored on secure servers in New Zealand or overseas (including with cloud service providers). Where information is stored overseas, we take steps to ensure it receives an equivalent level of protection to that required under New Zealand law.</p>
+      <p>While we implement strong safeguards, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee absolute security of your data.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Retention of Information</h2>
+      <p>We retain personal information only for as long as necessary to fulfil the purposes for which it was collected, including to satisfy legal, regulatory, or reporting requirements.</p>
+      <p>Enquiry and feedback data is typically retained for a period of up to 24 months, after which it is securely deleted or anonymised.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Your Rights</h2>
+      <p>Under the New Zealand Privacy Act 2020, you have the right to:</p>
+      <ul>
+        <li>Request access to personal information we hold about you</li>
+        <li>Request correction of any inaccurate or incomplete personal information</li>
+        <li>Request deletion of your personal information (subject to any legal retention obligations)</li>
+        <li>Withdraw consent to use of your information (where processing is based on consent)</li>
+        <li>Make a complaint to the Office of the Privacy Commissioner</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details below. We will respond to your request within 20 working days, as required under the Privacy Act 2020.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Cookies and Tracking</h2>
+      <p>Our website may use cookies and similar technologies to enhance your browsing experience, analyse site traffic, and personalise content. You can control cookies through your browser settings.</p>
+      <p>By using our website, you consent to the use of cookies in accordance with this policy. Disabling cookies may affect the functionality of certain areas of the site.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Links to External Sites</h2>
+      <p>Our website may contain links to third-party websites, including Google Reviews. This Privacy Policy applies only to our website. We are not responsible for the privacy practices of external websites and encourage you to read the privacy policies of any third-party sites you visit.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or for other operational reasons. We will post the updated policy on this page with a revised "last updated" date.</p>
+      <p>We encourage you to review this policy periodically. Your continued use of our website following any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Complaints</h2>
+      <p>If you have concerns about how we have handled your personal information, please contact us in the first instance using the details below. We will investigate and respond within a reasonable timeframe.</p>
+      <p>If you are not satisfied with our response, you may lodge a complaint with the Office of the Privacy Commissioner of New Zealand at <a href="https://www.privacy.org.nz" target="_blank" style="color: var(--gold); text-decoration:none;">www.privacy.org.nz</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Contact Us</h2>
+      <p>For any privacy-related queries, requests, or concerns, please contact us:</p>
+      <div class="contact-box">
+        <p><strong style="color:rgba(255,255,255,0.85);">RSE Group — Privacy Enquiries</strong></p>
+        <p>Rotorua, Bay of Plenty, New Zealand</p>
+        <p>Email: <a href="mailto:nick@mdgbeverages.com">nick@mdgbeverages.com</a></p>
+        <p>Phone: <a href="tel:021359169">021 359 169</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 RSE Group &nbsp;·&nbsp; Rotorua, New Zealand &nbsp;·&nbsp;
+    <a href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+    <a href="index.html">Home</a>
+  </footer>
+
+</body>
+</html>

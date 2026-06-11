@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSE Group — Quality Living for Seasonal Workers, Blenheim</title>
+  <meta name="description" content="RSE Group provides MBIE-certified managed accommodation for up to 280 RSE seasonal workers in Blenheim, Marlborough. A home away from home." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* HOME-SPECIFIC */
+    .hero {
+      padding: 108px 0 64px;
+      background: var(--olive);
+    }
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media(max-width:900px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+    }
+    .hero-inner { }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,133,46,.15); border: 1px solid rgba(232,133,46,.3);
+      color: #f5b06a; font-size: .78rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; padding: 7px 16px; border-radius: 99px; margin-bottom: 28px;
+    }
+    .hero h1 { margin-bottom: 16px; }
+    .hero .tagline { font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 500; color: rgba(237,234,184,.65); font-style: italic; margin-bottom: 20px; }
+    .hero .lead { font-size: 1.1rem; color: rgba(245,245,240,.68); max-width: 540px; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* OFFER CARDS */
+    .offer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    @media(max-width:900px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:540px) { .offer-grid { grid-template-columns: 1fr; } }
+
+    /* ABOUT */
+    .about-img { border-radius: var(--radius-lg); overflow: hidden; }
+    .about-img img { width: 100%; height: auto; object-fit: contain; display: block; }
+
+    /* STATS */
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(237,234,184,.08); border-radius: var(--radius); overflow: hidden; }
+    .stat-cell { padding: 28px 24px; background: var(--olive); text-align: center; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 6px; }
+    .stat-num span { color: var(--orange); }
+    .stat-label { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(245,245,240,.5); }
+    @media(max-width:700px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group logo" />
+        <span style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--cream);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;">RSE GROUP</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="units.html">Comfortable Units</a>
+        <a href="parking.html">Parking</a>
+        <a href="services.html">Services &amp; Linen</a>
+        <a href="induction.html">Site Induction</a>
+        <a href="contact.html">Inquire</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:+6427330897" class="header-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +64 27 330 8977
+        </a>
+        <a href="contact.html" class="btn btn-orange header-cta">Inquire Now</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="units.html">Comfortable Units</a>
+      <a href="parking.html">Safe On-Site Parking</a>
+      <a href="services.html">Services &amp; Linen</a>
+      <a href="induction.html">Site Induction</a>
+      <a href="contact.html" style="color:var(--orange);font-weight:600;">Inquire Now →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          MBIE RSE Certified Accommodation
+        </div>
+        <h1>Quality Living for Seasonal Workers</h1>
+        <p class="tagline">"A home away from home."</p>
+        <p class="lead">Purpose-built, fully managed accommodation for RSE scheme seasonal workers in Blenheim, Marlborough. Comfortable, secure, and audit-compliant.</p>
+        <div class="hero-actions">
+          <a href="mailto:managerdmtbm@gmail.com" class="btn btn-orange">Inquire Now</a>
+          <a href="#offer" class="btn btn-outline-cream">What's on Offer</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="assets/images/ACCOM-Side-on-web.png" alt="RSE Group accommodation exterior — 36A Budge Street, Blenheim" style="width:100%;height:auto;" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        MBIE RSE Audit Compliant
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Up to 280 Guests
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        24-Hour Security
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        5+ Years Operating
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        36A Budge Street, Blenheim
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S ON OFFER -->
+<section class="section" id="offer">
+  <div class="container">
+    <div class="text-center mb-24" style="margin-bottom:52px;">
+      <div class="eyebrow">Everything Included</div>
+      <h2>What's on Offer</h2>
+      <p style="max-width:520px;margin:14px auto 0;">Every aspect of your stay is taken care of — from the moment you arrive to the day you leave.</p>
+    </div>
+    <div class="offer-grid">
+      <a href="units.html" class="card" style="padding:0;overflow:hidden;">
+        <div class="offer-thumb">
+          <img src="assets/images/ACCOM-from-the-back-web.png" alt="RSE Group accommodation building" loading="lazy" />
+        </div>
+        <div style="padding:24px 22px 28px;">
+          <h3>Comfortable Units</h3>
+          <p style="margin:8px 0 16px;">Fully equipped units sleeping up to 4. Private kitchens, lounges, flat-screen TV, WiFi, Netflix and more.</p>
+          <span class="card-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="parking.html" class="card" style="padding:0;overflow:hidden;">
+        <div class="offer-thumb">
+          <img src="assets/images/ACCOM-CCTV-front-view-web.png" alt="RSE Group CCTV security front view" loading="lazy" />
+        </div>
+        <div style="padding:24px 22px 28px;">
+          <h3>Safe On-Site Parking</h3>
+          <p style="margin:8px 0 16px;">Security-controlled gate and full camera system keeps vehicles safe around the clock.</p>
+          <span class="card-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="services.html" class="card" style="padding:0;overflow:hidden;">
+        <div class="offer-thumb">
+          <img src="assets/images/new-worker-kitchen.avif" alt="Professional cleaning staff maintaining RSE Group accommodation" loading="lazy" />
+        </div>
+        <div style="padding:24px 22px 28px;">
+          <h3>Services &amp; Linen</h3>
+          <p style="margin:8px 0 16px;">Weekly servicing and fresh linen provided. Professional cleaning maintains a consistent standard throughout.</p>
+          <span class="card-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="induction.html" class="card" style="padding:0;overflow:hidden;">
+        <div class="offer-thumb">
+          <img src="assets/images/Workers-in-lounge-web.png" alt="Workers relaxing in the communal lounge" loading="lazy" />
+        </div>
+        <div style="padding:24px 22px 28px;">
+          <h3>Site Induction</h3>
+          <p style="margin:8px 0 16px;">A structured welcome process — every guest is fully briefed, confident and informed from day one.</p>
+          <span class="card-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STATS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-cell">
+        <div class="stat-num">280<span>+</span></div>
+        <div class="stat-label">Guest capacity</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">5<span>yr</span></div>
+        <div class="stat-label">In operation</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Onsite security</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">RSE audit compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;border-radius:var(--radius-lg);overflow:hidden;">
+        <div class="gallery-tile"><img src="assets/images/new-worker-kitchen.avif" alt="Professional cleaning staff maintaining RSE Group accommodation" loading="lazy" /></div>
+        <div class="gallery-tile"><img src="assets/images/Workers-in-lounge-web.png" alt="Workers relaxing in the lounge" loading="lazy" /></div>
+        <div class="gallery-tile"><img src="assets/images/Workers-flag-web.png" alt="Workers with their flag" loading="lazy" /></div>
+        <div class="gallery-tile"><img src="assets/images/Workers-playing-soccer-web.png" alt="Workers playing soccer on site" loading="lazy" /></div>
+      </div>
+      <div class="feature-content">
+        <span class="eyebrow">About RSE Group</span>
+        <h2>Accommodation Built for the Marlborough Seasonal Workforce</h2>
+        <p>RSE Group provides purpose-built, fully managed accommodation at 36A Budge Street, Blenheim — designed specifically for Pacific Island seasonal workers brought to Marlborough under the MBIE Recognised Seasonal Employer scheme.</p>
+        <p>Our facility is MBIE-certified and RSE audit compliant, with five years of successful audits behind us. We handle everything: transport, linen, cleaning, security, and inductions — so employers and workers can focus on the work.</p>
+        <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="mailto:managerdmtbm@gmail.com" class="btn btn-orange">Get in Touch</a>
+          <a href="units.html" class="btn btn-outline-cream">View Facilities</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MAP -->
+<section class="section-sm">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:36px;">
+      <div class="eyebrow">Our Location</div>
+      <h2>Find Us in Blenheim</h2>
+      <p style="margin-top:10px;">36A Budge Street, Riversdale, Blenheim — close to the CBD and major vineyard employers.</p>
+    </div>
+    <div class="map-embed-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.5!2d173.9642!3d-41.5148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38a9a86f1a3b2f%3A0x1!2s36A+Budge+Street%2C+Blenheim!5e0!3m2!1sen!2snz!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="RSE Group location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="container">
+    <p class="partners-label">Supporting Business Partners</p>
+  </div>
+  <div class="partners-marquee-wrap">
+    <div class="partners-marquee">
+      <img src="assets/images/SSCO.Logo.png" alt="SSCO" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="Talley's" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="Spring Creek Vintners" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="iNEME" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="AVS" loading="lazy" />
+      <img src="assets/images/SSCO.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Talleys.Logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/SPringCreek.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/Ineme.logo.png" alt="" aria-hidden="true" loading="lazy" />
+      <img src="assets/images/AVS.logo.png" alt="" aria-hidden="true" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FOOTER -->
+<footer class="contact-footer">
+  <div class="container">
+    <div class="contact-footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/RSE-new-logo.png" alt="RSE Group" />
+        <p>Purpose-built, MBIE-certified managed accommodation for RSE scheme seasonal workers in Blenheim, Marlborough.</p>
+        <span class="footer-tagline">"A home away from home."</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Home</a></li>
+          <li><a href="units.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Comfortable Units</a></li>
+          <li><a href="parking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Safe On-Site Parking</a></li>
+          <li><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Services &amp; Linen</a></li>
+          <li><a href="induction.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Site Induction</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+6427330897"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.93 5.93l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+64 27 330 8977</a></li>
+          <li><a href="mailto:managerdmtbm@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>managerdmtbm@gmail.com</a></li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>36A Budge Street, Riversdale, Blenheim</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RSE Group. All rights reserved.</p>
+      <a href="https://scaledsolutions.nz" target="_blank" rel="noopener">Website by Scaled Solutions</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header').style.boxShadow =
+    window.scrollY > 40 ? '0 2px 32px rgba(0,0,0,.35)' : 'none';
+});
+</script>
+</body>
+</html>
