@@ -105,7 +105,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   padding: 11px 0; gap: 24px;
 }
 .header-logo { display: flex; align-items: center; gap: 14px; }
-.header-logo img { height: 36px; width: auto; object-fit: contain; }
+.header-logo img { height: 72px; width: auto; object-fit: contain; }
 .header-logo-text {}
 .header-logo-text strong { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--forest-green); letter-spacing: .5px; }
 .header-logo-text span { display: block; font-size: .72rem; color: rgba(42, 102, 78, .65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1px; }
@@ -142,11 +142,11 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   .nav-toggle { display: flex; }
 }
 @media(max-width:900px) {
-  .header-logo img { height: 32px; }
+  .header-logo img { height: 64px; }
 }
 @media(max-width:480px) {
   .header-cta { display: none; }
-  .header-logo img { height: 28px; }
+  .header-logo img { height: 56px; }
 }
 
 /* ── BREADCRUMB ── */
