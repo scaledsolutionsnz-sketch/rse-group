@@ -13,7 +13,7 @@
     /* HOME-SPECIFIC */
     .hero {
       padding: 108px 0 64px;
-      background: var(--olive);
+      background: var(--forest-green);
     }
     .hero-split {
       display: grid;
@@ -28,13 +28,13 @@
     .hero-inner { }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(232,133,46,.15); border: 1px solid rgba(232,133,46,.3);
-      color: #f5b06a; font-size: .78rem; font-weight: 600; letter-spacing: 2px;
+      background: rgba(228,240,234,.2); border: 1px solid rgba(228,240,234,.35);
+      color: var(--mint); font-size: .78rem; font-weight: 600; letter-spacing: 2px;
       text-transform: uppercase; padding: 7px 16px; border-radius: 99px; margin-bottom: 28px;
     }
-    .hero h1 { margin-bottom: 16px; }
-    .hero .tagline { font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 500; color: rgba(237,234,184,.65); font-style: italic; margin-bottom: 20px; }
-    .hero .lead { font-size: 1.1rem; color: rgba(245,245,240,.68); max-width: 540px; margin-bottom: 40px; }
+    .hero h1 { margin-bottom: 16px; color: var(--white); }
+    .hero .tagline { font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 500; color: rgba(228,240,234,.75); font-style: italic; margin-bottom: 20px; }
+    .hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 540px; margin-bottom: 40px; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
     /* OFFER CARDS */
@@ -47,11 +47,11 @@
     .about-img img { width: 100%; height: auto; object-fit: contain; display: block; }
 
     /* STATS */
-    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(237,234,184,.08); border-radius: var(--radius); overflow: hidden; }
-    .stat-cell { padding: 28px 24px; background: var(--olive); text-align: center; }
-    .stat-num { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 6px; }
-    .stat-num span { color: var(--orange); }
-    .stat-label { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(245,245,240,.5); }
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(42,102,78,.1); border-radius: var(--radius); overflow: hidden; }
+    .stat-cell { padding: 28px 24px; background: var(--forest-green); text-align: center; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 6px; }
+    .stat-num span { color: var(--mint); }
+    .stat-label { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.65); }
     @media(max-width:700px) { .stats-row { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
@@ -62,8 +62,8 @@
   <div class="container">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
-        <img src="assets/images/RSE-new-logo.png" alt="RSE Group logo" />
-        <span style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--cream);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;">RSE GROUP</span>
+        <img src="assets/rse-logo.png" alt="RSE Group logo" />
+        <span style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--forest-green);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;">RSE GROUP</span>
       </a>
       <nav class="header-nav">
         <a href="index.html" class="active">Home</a>
@@ -90,7 +90,7 @@
       <a href="parking.html">Safe On-Site Parking</a>
       <a href="services.html">Services &amp; Linen</a>
       <a href="induction.html">Site Induction</a>
-      <a href="contact.html" style="color:var(--orange);font-weight:600;">Inquire Now →</a>
+      <a href="contact.html" style="color:var(--forest-green);font-weight:600;">Inquire Now →</a>
     </nav>
   </div>
 </header>
@@ -298,7 +298,7 @@
   <div class="container">
     <div class="contact-footer-grid">
       <div class="footer-brand">
-        <img src="assets/images/RSE-new-logo.png" alt="RSE Group" />
+        <img src="assets/rse-logo.png" alt="RSE Group" />
         <p>Purpose-built, MBIE-certified managed accommodation for RSE scheme seasonal workers in Blenheim, Marlborough.</p>
         <span class="footer-tagline">"A home away from home."</span>
       </div>
