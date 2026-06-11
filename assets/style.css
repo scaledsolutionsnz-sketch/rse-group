@@ -236,26 +236,43 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .partners-marquee:hover { animation-play-state: paused; }
 .partner-link {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity .2s, transform .2s;
   cursor: pointer;
+  text-decoration: none;
+  pointer-events: auto;
 }
 .partner-link:hover {
   opacity: 0.8;
   transform: scale(1.05);
 }
-.partners-marquee img {
-  height: 88px; width: auto; object-fit: contain;
+.partner-link img {
+  height: 88px;
+  width: auto;
+  object-fit: contain;
   background: var(--white);
   border-radius: 10px;
   padding: 12px 22px;
   border: 2px solid var(--forest-green-border);
   box-shadow: 0 1px 8px rgba(0,0,0,.04);
   transition: box-shadow .2s;
-  opacity: 1;
   display: block;
+  pointer-events: none;
 }
 .partner-link:hover img {
   box-shadow: 0 4px 16px rgba(42, 102, 78, .15);
+}
+.partners-marquee > img {
+  height: 88px;
+  width: auto;
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 12px 22px;
+  border: 2px solid var(--forest-green-border);
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
+  display: block;
 }
 @keyframes marquee {
   from { transform: translateX(0); }
