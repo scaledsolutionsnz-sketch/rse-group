@@ -196,11 +196,13 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .page-hero-tag {
   display: inline-flex; align-items: center; gap: 7px;
   background: var(--mint);
-  border: 1px solid rgba(42, 102, 78, .25);
+  border: 1px solid rgba(42, 102, 78, .3);
   color: var(--forest-green); font-size: .8rem; font-weight: 600; letter-spacing: 1px;
-  padding: 6px 14px; border-radius: 99px; margin-bottom: 28px; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 99px; margin-bottom: 28px; text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
-.page-hero-tag svg { width: 13px; height: 13px; color: var(--forest-green); }
+.page-hero-tag svg { width: 13px; height: 13px; color: var(--forest-green); flex-shrink: 0; }
 
 /* ── CARDS ── */
 .card {
