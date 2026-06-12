@@ -102,7 +102,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 2px 0; gap: 24px;
+  padding: 0px 0; gap: 24px;
 }
 .header-logo { display: flex; align-items: center; gap: 14px; }
 .header-logo img { height: 90px; width: auto; object-fit: contain; }
@@ -119,6 +119,11 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .header-nav a:hover, .header-nav a.active {
   color: var(--forest-green);
   background: var(--forest-green-light);
+}
+.header-nav a[href="contact.html"] {
+  background: linear-gradient(135deg, rgba(42,102,78,0.15) 0%, rgba(42,102,78,0.08) 100%);
+  border-bottom: 2px solid var(--forest-green);
+  color: var(--forest-green);
 }
 .header-right { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 .header-phone { font-size: .85rem; font-weight: 600; color: var(--forest-green); display: flex; align-items: center; gap: 6px; }
@@ -653,6 +658,23 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   .hero .tagline,
   .hero .lead,
   .hero-actions { animation: none; }
+}
+
+/* ── CONTACT HERO ── */
+.contact-hero {
+  position: relative;
+  padding: 96px 0;
+  background-image: linear-gradient(135deg, rgba(42,102,78,0.72) 0%, rgba(42,102,78,0.65) 40%, rgba(42,102,78,0.5) 100%), url('assets/images/Deckoutdoor.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white);
+}
+.contact-hero h1 {
+  color: var(--white);
+}
+.contact-hero .eyebrow {
+  color: rgba(228,240,234,0.9);
 }
 
 /* ── HERO SECTION (home page) — Forest Green background ── */
