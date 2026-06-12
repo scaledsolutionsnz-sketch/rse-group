@@ -32,6 +32,13 @@ body {
   color: var(--text-dark);
   line-height: 1.65;
   overflow-x: hidden;
+  padding-top: 96px;
+}
+@media(max-width:900px) {
+  body { padding-top: 88px; }
+}
+@media(max-width:480px) {
+  body { padding-top: 84px; }
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
