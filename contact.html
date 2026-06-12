@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enquire &amp; Check Availability — RSE Group Marlborough</title>
-  <meta name="description" content="Enquire about accommodation availability at RSE Group Marlborough. Check dates and send your details — we respond within one business day. Based in Blenheim." />
+  <title>Enquire &amp; Check Availability – RSE Group Marlborough</title>
+  <meta name="description" content="Enquire about accommodation availability at RSE Group Marlborough. Check dates and send your details – we respond within one business day. Based in Blenheim." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -407,7 +407,7 @@
           <label>Preferred Dates (selected below)</label>
           <div class="date-display" id="dateDisplay">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>No dates selected — use the calendar →</span>
+            <span>No dates selected – use the calendar →</span>
           </div>
         </div>
 
@@ -426,7 +426,7 @@
       </form>
 
       <div class="success-msg" id="successMsg">
-        ✓ Your email client has opened with your enquiry pre-filled. Just hit send — we'll be in touch within one business day.
+        ✓ Your email client has opened with your enquiry pre-filled. Just hit send – we'll be in touch within one business day.
       </div>
 
       <!-- CONTACT INFO -->
@@ -489,8 +489,8 @@
         </div>
       </div>
 
-      <p style="font-size:.78rem;color:rgba(245,245,240,.3);margin-top:14px;line-height:1.6;">
-        This is not a live booking system. Selecting dates simply helps us understand your preferred period — our team will confirm actual availability when we respond.
+      <p style="font-size:.78rem;margin-top:14px;line-height:1.6;">
+        This is not a live booking system. Selecting dates simply helps us understand your preferred period – our team will confirm actual availability when we respond.
       </p>
     </div>
 
@@ -639,7 +639,7 @@ function pickDate(date) {
     startDate = date;
     endDate = null;
   } else if (date < startDate) {
-    // Picked before start — swap
+    // Picked before start – swap
     startDate = date;
     endDate = null;
   } else {
@@ -652,9 +652,9 @@ function pickDate(date) {
 function updateDateDisplay() {
   const el = document.getElementById('dateDisplay');
   if (!startDate) {
-    el.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>No dates selected — use the calendar →</span>';
+    el.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>No dates selected – use the calendar →</span>';
   } else if (!endDate) {
-    el.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Arrival: <strong style="color:var(--forest-green)">${fmt(startDate)}</strong> — click an end date`;
+    el.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Arrival: <strong style="color:var(--forest-green)">${fmt(startDate)}</strong> – click an end date`;
   } else {
     el.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong style="color:var(--forest-green)">${fmt(startDate)}</strong> → <strong style="color:var(--forest-green)">${fmt(endDate)}</strong>`;
   }
@@ -692,7 +692,7 @@ function submitForm(e) {
     message ? `\nMessage:\n${message}` : null,
   ].filter(Boolean).join('\n');
 
-  const subject = encodeURIComponent(`Accommodation Enquiry — ${name}${company ? ', ' + company : ''}`);
+  const subject = encodeURIComponent(`Accommodation Enquiry – ${name}${company ? ', ' + company : ''}`);
   const bodyEnc = encodeURIComponent(body);
   window.location.href = `mailto:managerdmtbm@gmail.com?subject=${subject}&body=${bodyEnc}`;
 
