@@ -102,17 +102,17 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0px 0; gap: 24px;
+  padding: 14px 0; gap: 20px; flex-wrap: nowrap;
 }
-.header-logo { display: flex; align-items: center; gap: 0; }
-.header-logo img { height: 90px; width: auto; object-fit: contain; }
+.header-logo { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
+.header-logo img { height: 60px; width: auto; object-fit: contain; }
 .header-logo-text {}
 .header-logo-text strong { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--forest-green); letter-spacing: .5px; }
 .header-logo-text span { display: block; font-size: .72rem; color: rgba(42, 102, 78, .65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1px; }
-.header-nav { display: flex; align-items: center; gap: 2px; }
+.header-nav { display: flex; align-items: center; gap: 1px; flex-wrap: nowrap; }
 .header-nav a {
-  padding: 8px 11px; border-radius: 7px;
-  font-size: .84rem; font-weight: 500; color: var(--text-dark);
+  padding: 8px 10px; border-radius: 7px;
+  font-size: .81rem; font-weight: 500; color: var(--text-dark);
   white-space: nowrap;
   transition: var(--transition);
 }
@@ -151,11 +151,13 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   .nav-toggle { display: flex; }
 }
 @media(max-width:900px) {
-  .header-logo img { height: 76px; }
+  .header-logo img { height: 54px; }
+  .header-inner { padding: 12px 0; }
 }
 @media(max-width:480px) {
   .header-cta { display: none; }
-  .header-logo img { height: 68px; }
+  .header-logo img { height: 50px; }
+  .header-inner { padding: 10px 0; }
 }
 
 /* ── BREADCRUMB ── */
