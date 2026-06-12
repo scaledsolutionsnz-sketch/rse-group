@@ -102,7 +102,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 11px 0; gap: 24px;
+  padding: 6px 0; gap: 24px;
 }
 .header-logo { display: flex; align-items: center; gap: 14px; }
 .header-logo img { height: 90px; width: auto; object-fit: contain; }
