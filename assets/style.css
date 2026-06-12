@@ -463,7 +463,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 }
 
 /* ── PARKING PANORAMIC HERO ── */
-.parking-hero-img { padding-top: 84px; background: var(--forest-green); overflow: hidden; }
+.parking-hero-img { padding-top: 0; background: transparent; overflow: hidden; }
 .parking-hero-img img { width: 100%; height: auto; display: block; }
 .parking-hero-text { padding: 48px 0 60px; }
 
