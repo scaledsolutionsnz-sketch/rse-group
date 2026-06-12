@@ -105,7 +105,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   padding: 11px 0; gap: 24px;
 }
 .header-logo { display: flex; align-items: center; gap: 14px; }
-.header-logo img { height: 72px; width: auto; object-fit: contain; }
+.header-logo img { height: 90px; width: auto; object-fit: contain; }
 .header-logo-text {}
 .header-logo-text strong { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--forest-green); letter-spacing: .5px; }
 .header-logo-text span { display: block; font-size: .72rem; color: rgba(42, 102, 78, .65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1px; }
@@ -142,11 +142,11 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   .nav-toggle { display: flex; }
 }
 @media(max-width:900px) {
-  .header-logo img { height: 64px; }
+  .header-logo img { height: 76px; }
 }
 @media(max-width:480px) {
   .header-cta { display: none; }
-  .header-logo img { height: 56px; }
+  .header-logo img { height: 64px; }
 }
 
 /* ── BREADCRUMB ── */
@@ -669,3 +669,46 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   color: var(--mint);
 }
 .hero-badge svg { color: var(--mint); }
+
+/* ── CTA SECTION WITH BACKGROUND ── */
+.cta-section {
+  position: relative;
+  padding: 96px 0;
+  margin: 64px 0;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/Deckoutdoor.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 102, 78, 0.65);
+  z-index: 2;
+}
+.cta-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 28px;
+}
+.cta-section h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 600px;
+}
