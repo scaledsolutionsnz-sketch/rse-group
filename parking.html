@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/lightbox.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
@@ -84,11 +85,11 @@
     <div class="service-body-grid">
       <div class="service-description">
         <!-- PHOTO BLOCK -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:36px;">
-          <div style="overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:36px;" data-gallery="parking">
+          <div class="gallery-tile" style="overflow:hidden;">
             <img src="assets/images/Deckoutdoor.jpg" alt="RSE Group exterior facilities and parking area" loading="lazy" style="width:100%;height:auto;object-fit:cover;transition:transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
           </div>
-          <div style="overflow:hidden;">
+          <div class="gallery-tile" style="overflow:hidden;">
             <img src="assets/images/4Bedbedroomdiffrentview.jpg" alt="Secure accommodation facility" loading="lazy" style="width:100%;height:auto;object-fit:cover;transition:transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
           </div>
         </div>
@@ -215,6 +216,7 @@
   </div>
 </footer>
 
+<script src="assets/lightbox.js"></script>
 <script>
 function toggleNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
 window.addEventListener('scroll', () => {
