@@ -408,7 +408,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 
 /* ── SERVICE DETAIL PAGE ── */
 .service-hero {
-  padding: 100px 0 64px;
+  padding: 60px 0 64px;
   border-bottom: 1px solid var(--forest-green-border);
 }
 .service-body { padding: 72px 0; }
@@ -457,14 +457,15 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: flex-start;
 }
 .service-hero-split .hero-img-panel {
   border-radius: var(--radius-lg);
   overflow: hidden;
+  max-height: 420px;
 }
 .service-hero-split .hero-img-panel img {
-  width: 100%; height: auto; display: block;
+  width: 100%; height: 100%; display: block; object-fit: cover;
 }
 @media(max-width:900px) {
   .service-hero-split { grid-template-columns: 1fr; }
