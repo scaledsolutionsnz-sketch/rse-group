@@ -125,6 +125,10 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
   border-bottom: 2px solid var(--forest-green);
   color: var(--forest-green);
 }
+/* Hide Enquire nav link, show only green button */
+.header-nav a[href="contact.html"] {
+  display: none;
+}
 .header-right { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 .header-phone { font-size: .85rem; font-weight: 600; color: var(--forest-green); display: flex; align-items: center; gap: 6px; }
 .header-phone svg { color: var(--forest-green); }
@@ -664,10 +668,11 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .contact-hero {
   position: relative;
   padding: 96px 0;
-  background-image: linear-gradient(135deg, rgba(42,102,78,0.72) 0%, rgba(42,102,78,0.65) 40%, rgba(42,102,78,0.5) 100%), url('assets/images/Deckoutdoor.jpg');
+  background-image: linear-gradient(135deg, rgba(42,102,78,0.55) 0%, rgba(42,102,78,0.50) 40%, rgba(42,102,78,0.40) 100%), url('assets/images/Deckoutdoor.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-color: rgba(42,102,78,0.6);
   color: var(--white);
 }
 .contact-hero h1 {
