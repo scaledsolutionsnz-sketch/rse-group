@@ -668,7 +668,7 @@ p  { color: rgba(26,26,26,.75); line-height: 1.8; }
 .contact-hero {
   position: relative;
   padding: 96px 0;
-  background-image: linear-gradient(135deg, rgba(42,102,78,0.45) 0%, rgba(42,102,78,0.35) 50%, rgba(42,102,78,0.25) 100%), url('assets/images/Deckoutdoor.jpg');
+  background-image: linear-gradient(135deg, rgba(42,102,78,0.60) 0%, rgba(42,102,78,0.58) 50%, rgba(42,102,78,0.55) 100%), url('assets/images/Deckoutdoor.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
