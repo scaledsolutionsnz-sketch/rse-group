@@ -263,6 +263,38 @@
     .form-submit .btn {
       color: #FFFFFF !important;
     }
+
+    /* ── REMAINING TEXT FIXES ── */
+    /* Calendar helper text */
+    .cal-wrap ~ p {
+      color: #2A664E !important;
+      opacity: 1 !important;
+      background: none !important;
+    }
+
+    /* Contact info cards */
+    .info-card strong {
+      color: #1F2937 !important;
+      opacity: 1 !important;
+    }
+    .info-card p {
+      color: #1F2937 !important;
+      opacity: 1 !important;
+      background: none !important;
+    }
+    .info-card a {
+      color: #2A664E !important;
+      opacity: 1 !important;
+      background: none !important;
+    }
+    .info-card a:hover {
+      color: #1F2937 !important;
+    }
+
+    /* Remove any pale cream backgrounds */
+    .info-card {
+      background: rgba(255,255,255,.04) !important;
+    }
   </style>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
@@ -426,7 +458,7 @@
     <!-- RIGHT: CALENDAR -->
     <div>
       <h2 style="font-size:1.4rem;margin-bottom:8px;">Select Dates</h2>
-      <p style="font-size:.88rem;color:rgba(245,245,240,.5);margin-bottom:20px;">Click a start date, then click an end date to indicate your preferred period.</p>
+      <p style="font-size:.88rem;color:#2A664E;margin-bottom:20px;">Click a start date, then click an end date to indicate your preferred period.</p>
 
       <div class="cal-wrap">
         <div class="cal-header">
